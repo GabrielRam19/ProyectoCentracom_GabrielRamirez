@@ -14,9 +14,15 @@ DB: SQL Server 2022
 
 OS: Windows 10
 
+Framework: SpringBoot v2.6.4
+
+Spring Security: 5.2.8
+
+Javax.servlet: 4.0.0
+
 ### Configuración del proyecto
 
-#### Inicializacion el proyecto
+#### Inicializacion del proyecto
 
 Para poder correr el proyecto de manera funcional recomiendo seguir los siguientes pasos:
 
@@ -29,6 +35,10 @@ Antes de continuar se debera configurar el proyecto para la respectiva db con sq
 ![Configuracion de db para spring](./img/properties.PNG)
 
 Para empezar el puerto que le coloque fue el 1433 que es el mas comun para el desarrollo pero dependiendo la configuración que se tenga en SQL Server Configuration Manager se puede cambiar al que mas se acomode.
+
+#### **Importante**:
+
+- Considero una mejor opcion utilizar intellij idea puesto que windows da ciertos problemas con el firewall y el puerto que se haya seleccionado y este IDE tiene una configuración rapida para esto al abrir el proyecto
 
 Despues el nombre de la base de datos a la que se quiere conectar el proyecto que como se ve en la imagen mi db se llamada crud_db y las credenciales de acceso al entorno propio de sql server que puede cambiar dependiendo de la db. Y eso es todo en cuando a la configuracion de spring para la db pero es importante crear una tabla en esa db llamada "Empleado" con el siguiente comando:
 
@@ -56,7 +66,21 @@ Una vez hecho esto ya deberia estar conectado sql server al proyecto por lo que 
 
 ## Manual de usuario
 
-El uso del proyecto es algo sencillo dado que se tiene 3 paginas donde se encuentran las funcionalidades del crud.
+El uso del proyecto es algo sencillo dado que se tiene 4 paginas donde se encuentran las funcionalidades del crud.
+
+#### Login
+
+Se creo un pequeño sistema de accesos para este proyecto con Spring-Security, para ello se creo la siguiente plantilla de html:
+
+![Pantalla de login](./img/login.png)
+
+En ella se tiene un form normal con usuario y contraseña, para este caso hay un usuario ya quemado en el proyecto cuyas credenciales son:
+
+Username: admin
+
+Password: 123
+
+Habiendo ingresado estas credenciales se redigira al usuario a la pestaña de registro de empleados la cual se explica a continuacion:
 
 #### Registro
 
@@ -75,3 +99,5 @@ En este apartado se podra actualizar los datos del registro de un empleado ingre
 ![imagen de la pagina de reporte](./img/reporte.png)
 
 La funcionalidad de este apartado es la de proporcionar informacion acerca de los registros que se tienen en la base de datos incluyendo el id del registro, el nombre del empleado, el puesto, la vacuna que se aplico, el estado de vacunación y la fecha de la proxima vacuna si es que es requerida. Ademas tambien encontramos en este apartado la opcion de eliminar el registro, esto mediante un boton que aparece al lado derecho de cada fila.
+
+Cada una de estas pestañas tiene la opcion de salir y cerrar la sesion actual y cuando el usuario haya salido este no podra ingresar a las pestañas de gestion a menos que ingrese de nuevo.
