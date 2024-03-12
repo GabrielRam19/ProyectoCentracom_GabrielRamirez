@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Styles.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <title>Pagina de inicio</title>
+</head>
+<body class="body-login">
+    <div class="main-block">
+        <form class="form1" method="POST" action="/login">
+            <h3>Ingresar</h3>
+            <label for="username" class="label1">Username</label>
+                <input type="text" name="username" placeholder="Nombre" id="username" class="input1">
+            <label for="password" class="label1">Password</label>
+                <input type="password" placeholder="Contraseña" id="password" class="input1" name="password">
+            <button class="button1" name="submit" type="submit" value="submit">Log In</button>
+            <br>
+        </form>
+    </div>
+</body>
+</html>

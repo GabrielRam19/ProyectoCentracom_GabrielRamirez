@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar registros</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Styles.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+<header id="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gabriel Ramirez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/Report">Area de reporte</a>
+                    <a class="nav-link" href="/Registro">Area de registro</a>
+                    <a class="nav-link" href="/logout">Salir de la sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<h1 class="titulo-reg">Actualizacion de registros</h1>
+<form action="/uptreg" method="POST" th:object="${employee}" class="div-form">
+    <div th:if="${mensaje}" class="alert alert-success">
+        <p th:text="${mensaje}"></p>
+    </div>
+    <div th:if="${error}" class="alert alert-danger">
+        <p th:text="${error}"></p>
+    </div>
+    <label class="form-label" for="Name">ID del empleado</label>
+    <div class="input-group input-group-sm mb-3" id="ID">
+        <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="Id">
+    </div>
+    <label class="form-label" for="Name">Nombre del empleado</label>
+    <div class="input-group input-group-sm mb-3" id="Name">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="Name">
+    </div>
+    <label class="form-label" for="Job">Puesto laboral</label>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Puesto</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="Job" name="Job">
+    </div>
+
+    <label for="Vacunas" class="form-label">Vacuna Administrada</label>
+    <select name="vaccine" id="Vacunas" class="form-select" aria-label="Default select example">
+        <option selected>Seleccione la vacuna</option>
+        <option value="Sinopharm">Sinopharm</option>
+        <option value="AstraZeneca">AstraZeneca</option>
+        <option value="Sputnik V">Sputnik V</option>
+        <option value="Pfizer">Pfizer</option>
+        <option value="Moderna">Moderna</option>
+        <option value="Janssen">Janssen</option>
+    </select>
+    <label for="noVacunas">¿Cuantas vacunas tiene este empleado?</label>
+    <select name="novaccines" id="noVacunas" class="form-select" aria-label="Default select example">
+        <option selected>Seleccione la cantidad</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <label for="fecha" class="form-label">Selecciona la fecha de la primer vacuna:</label>
+    <input type="date" class="form-control" id="fecha" name="date">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </div>
+</form>
+</body>
+</html>

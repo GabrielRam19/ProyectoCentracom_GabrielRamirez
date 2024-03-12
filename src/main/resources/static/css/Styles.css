@@ -1,0 +1,208 @@
+.body{
+    background-color: #bee3db;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 7vw 7vw 1fr;
+}
+.body2{
+    background-color: #bee3db;
+    display: grid;
+    grid-template-columns: 1fr 55vw 1fr;
+    grid-template-rows: 7vw 7vw 1fr;
+}
+
+.titulo-reg{
+    font-family: "Fjalla One", sans-serif;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+}
+
+.div-form{
+    width: 50vw;
+    padding: 3vw;
+    grid-column: 2;
+    grid-row: 3;
+    background-color: #89b0ae;
+    border-radius: 2em;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#Opciones{
+    width: fit-content;
+    height: fit-content;
+    grid-column: 2;
+    align-self: flex-end;
+    justify-self: center;
+    margin-bottom: 2vw;
+}
+
+#report-btn{
+    height: fit-content;
+    width: fit-content;
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: center;
+
+}
+#report-btn1{
+    margin-top: 5vw;
+    height: fit-content;
+    width: fit-content;
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: center;
+
+}
+
+#Table{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#titulo{
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 3vw;
+    width: max-content;
+    margin: 2vw;
+    font-family: "Fjalla One", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#register-btn{
+    grid-column: 3;
+    grid-row: 2;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+}
+#reporte{
+    width: fit-content;
+    border-radius: 2em;
+}
+
+.btn-del {
+    background-color: transparent;
+    position: relative;
+    border: none;
+}
+
+.btn-del::after {
+    content: 'delete';
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(168, 7, 7);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .2s linear;
+    transition-delay: .2s;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon {
+    transform: scale(1.2);
+    transition: .2s linear;
+}
+
+.btn-del > .icon path{
+    fill: white;
+}
+.btn-del:hover > .icon {
+    transform: scale(1.5);
+}
+
+.btn-del:hover > .icon path {
+    fill: rgb(168, 7, 7);
+}
+
+.btn-del:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+}
+
+.btn-group{
+    position: relative;
+    left: 40%;
+    margin-top: 1vw;
+}
+
+#header{
+    grid-column: span 3;
+}
+
+.body-login{
+    background-image: url(../images/BG3.jpg);
+    background-size: cover;
+}
+
+.form1{
+    height: 450px;
+    width: 400px;
+    background-color: rgba(66, 62, 62, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+.form1 *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.form1 h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.label1{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.input1{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.button1{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
